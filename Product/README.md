@@ -11,9 +11,6 @@ openpkb/
 │   │   ├── morning-digest.md
 │   │   └── topic-queue.md
 │   └── settings.json              ← MCP server allowlist
-├── .hermes/
-│   ├── soul.md                    ← agent kimliği
-│   └── cron.md                    ← gece job'ları
 ├── vault/                         ← Obsidian buraya açılır
 │   ├── _raw/                      ← immutable kaynaklar
 │   ├── _wiki/                     ← LLM'in ürettiği sayfalar

@@ -28,10 +28,10 @@ twitter-growth              paused    nice       2026-05-10   —            0
    3. geri kalan active
    4. paused (en sonda)
 
-5. Sonunda Hermes'in gece çalıştıracağı sıraya hazır olanı söyle:
+5. Sonunda gece cron'unun (launchd/crontab, 02:00) çalıştıracağı sıraya hazır olanı söyle:
 
 ```
-TONIGHT'S QUEUE (Hermes 02:00 tarafından koşulacak):
+TONIGHT'S QUEUE (cron 02:00 tarafından koşulacak):
 1. app-launch-strategy (blocker, 2 gap open)
 2. tiktok-marketing (high, 4 gap open)
 ```

@@ -56,8 +56,8 @@ scam_warnings: N
 - {Hangi blocker'lar manuel kullanıcı kararı bekliyor}
 ```
 
-7. Eğer Hermes Telegram bağlıysa, bu dosyanın TOP HALF'ini Telegram'a at.
-   (Bu Hermes tarafından otomatik yapılır, sen sadece dosyayı yazıyorsun.)
+7. Telegram'a bildirim isteniyorsa, launchd/cron tetikleyici dosyanın TOP HALF'ini
+   `curl` ile Telegram Bot API'sine atar. Sen sadece dosyayı yazıyorsun.
 
 ## Kurallar
 

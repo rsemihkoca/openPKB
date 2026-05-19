@@ -3,7 +3,7 @@
 Geceleri çalışan, otonom araştırma yapan, çelişkileri tartan, boşlukları
 soru olarak açan, Obsidian'a graph şeklinde kaydeden kişisel bilgi sistemi.
 
-**Mimari:** Hermes Agent (scheduler) → Claude Code (orchestrator) →
+**Mimari:** openPkb (scheduler) → Claude Code (orchestrator) →
 5 subagent (researcher / verifier / contradiction-finder / gap-hunter /
 source-trust) → Obsidian vault (LLM Wiki pattern).
 
@@ -82,22 +82,22 @@ claude  # interaktif moda gir, /agents komutu ile subagent'ların listesini gör
 `/agents` çağırdığında 5 subagent görmen lazım: researcher, verifier,
 contradiction-finder, gap-hunter, source-trust.
 
-## Adım 4 — Hermes kurulumu
+## Adım 4 — openPkb kurulumu
 
 ```bash
 # (Repo'nun resmi kurulum talimatı değişebilir, son halini kontrol et:
-# https://github.com/NousResearch/hermes-agent)
+# https://github.com/NousResearch/openPkb-agent)
 
 # Tipik akış:
-npm install -g hermes-agent
+npm install -g openPkb-agent
 
 # Anthropic provider'ını seç (CC credential'larını otomatik kullanır):
-hermes model
+openPkb model
 # → Anthropic OAuth seç
 
 # Çalışma dizinini openpkb yap:
 cd ~/openpkb
-hermes init --soul .hermes/soul.md
+openPkb init --soul .openPkb/soul.md
 ```
 
 ## Adım 5 — MCP server'ları test
@@ -121,15 +121,15 @@ claude -p "Use the tavily MCP to search for 'tiktok algorithm 2026' and report t
 ## Adım 7 — Cron job'larını kur
 
 ```bash
-# Hermes'e doğal dilden cron tarif et:
-hermes chat
+# openPkb'e doğal dilden cron tarif et:
+openPkb chat
 > "Every night at 02:00 local time, run /topic-queue to get the
 >  prioritized list, then for each active topic call /deep-research
 >  with that topic's slug. Stop at 06:00 even if not all done."
 
-# Hermes onaylayıp ~/.hermes/cron/jobs.json'a yazacak.
+# openPkb onaylayıp ~/.openPkb/cron/jobs.json'a yazacak.
 # Doğrula:
-hermes cron list
+openPkb cron list
 ```
 
 ## Adım 8 — İlk test
@@ -171,7 +171,7 @@ kökünden çalıştırılıyor mu kontrol et.
 **MCP server timeout** → API key'leri .env'de doğru mu, key'in bakiyesi
 var mı.
 
-**Hermes "no jobs"** → `hermes cron list` ile gör, yeniden tarif et.
+**openPkb "no jobs"** → `openPkb cron list` ile gör, yeniden tarif et.
 
 **Vault çorba oldu** → `git reset --hard HEAD~N` ile geri al. Bu yüzden
 git başlangıçta init edildi.
@@ -186,6 +186,6 @@ git başlangıçta init edildi.
 
 ## Sonraki adımlar
 
-- Telegram bot bağla: `hermes connect telegram <BotFather-token>`
+- Telegram bot bağla: `openPkb connect telegram <BotFather-token>`
 - Daha fazla subagent ekle: `.claude/agents/` altına yeni .md
 - InfraNodus plugin'i Obsidian'a yükle, graph gap analizi açılır

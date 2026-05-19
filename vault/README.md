@@ -35,8 +35,8 @@ içindeki frontmatter'da:
 - `status:` → `active`
 - `description:` → ne araştırmak istediğin
 
-Sonraki gece 02:00'de Hermes bu konuyu işlemeye başlayacak. Sabah
-`_digests/` altında o gün ne olduğunu göreceksin.
+Sonraki gece 02:00'de cron (launchd/crontab) bu konuyu işlemeye başlayacak.
+Sabah `_digests/` altında o gün ne olduğunu göreceksin.
 
 ## Manuel komut
 

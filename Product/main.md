@@ -65,8 +65,8 @@ Claude Code'la bir konu üzerinde çalışırken (mesela bir app tasarımı), bi
 
 Her MUST'u hangi mekanizmanın karşıladığını eşliyorum. Burası "kod" değil, mimari mantık.
 
-### M1 (Async çalışma) → **Hermes Agent** karşılıyor
-Hermes built-in scheduler'la geliyor. Gateway daemon 60 saniyede bir tick atıyor, gece 02:00'de bekleyen job'u çalıştırıyor, Claude Code'u headless modda tetikliyor. CC normalde sen yazana kadar bekleyen bir TUI — Hermes onu "sen olmadan da iş başlat" yapan üst katman.
+### M1 (Async çalışma) → **openPkb** karşılıyor
+openPkb built-in scheduler'la geliyor. Gateway daemon 60 saniyede bir tick atıyor, gece 02:00'de bekleyen job'u çalıştırıyor, Claude Code'u headless modda tetikliyor. CC normalde sen yazana kadar bekleyen bir TUI — openPkb onu "sen olmadan da iş başlat" yapan üst katman.
 
 ### M2 (Konu → dallandırma) → **`/deep-research` slash command + plan turn'ü**
 Bir konuyu işlerken CC ilk turn'ünde sadece **plan** çıkartır: "Bu konuyu 5 alt-konuya böldüm, ilk üçü blocker, son ikisi nice-to-have." Sonraki turn'lerde her alt-konuyu paralel subagent'lara delege eder. Sen tek tek listelemiyorsun çünkü orchestrator agent bu dallandırmayı kendi yapıyor.
@@ -95,14 +95,14 @@ Her sayfanın frontmatter'ında summary, sources, tags, trust var. Orchestrator 
 ### M11 (Twitter / sosyal) → **BrowserAct MCP veya X API MCP**
 Twitter'ın API'sı kısıtlı. İki yol var: ya official X API MCP'si (rate-limited, ücretli), ya da BrowserAct gibi headless browser MCP'si (anti-bot katmanları aşar, scraping yapar). researcher subagent bu MCP'leri kullanarak tweet ve thread çekiyor.
 
-### S1 (Doğal dil cron) → Hermes'in cron özelliği
-Türkçe "her gece 02:00'de" yazıyorsun, Hermes cron expression'a çeviriyor, `~/.hermes/cron/jobs.json` altına yazıyor.
+### S1 (Doğal dil cron) → openPkb'in cron özelliği
+Türkçe "her gece 02:00'de" yazıyorsun, openPkb cron expression'a çeviriyor, `~/.openPkb/cron/jobs.json` altına yazıyor.
 
-### S2 (Telegram digest) → Hermes gateway
-Hermes'in Telegram/Discord/Slack gateway'i var. `/morning-digest` slash command çıktısı Telegram'a otomatik gidiyor.
+### S2 (Telegram digest) → openPkb gateway
+openPkb'in Telegram/Discord/Slack gateway'i var. `/morning-digest` slash command çıktısı Telegram'a otomatik gidiyor.
 
-### S3 (Learning loop) → Hermes'in skill-creation döngüsü
-Hermes her ~15 tool call'da bir kendini reviewlayıp yeni bir skill dosyası üretiyor. Senin sürekli tekrarladığın kararlar (kaynak whitelist, format tercihi) zamanla skill dosyalarına dönüşüyor.
+### S3 (Learning loop) → openPkb'in skill-creation döngüsü
+openPkb her ~15 tool call'da bir kendini reviewlayıp yeni bir skill dosyası üretiyor. Senin sürekli tekrarladığın kararlar (kaynak whitelist, format tercihi) zamanla skill dosyalarına dönüşüyor.
 
 ### S4 (Graph analytics) → InfraNodus MCP
 Sadece Obsidian'ın native graph view'i değil, küme bazlı gap analizi de var.
@@ -140,19 +140,19 @@ openpkb/
 │   │   web'e çıkmaz (WebFetch yasak) — sadece mevcut wiki'yi tarar.
 │   │   Bu izolasyon M9'u (paralellik) ve güvenliği (M5'in yan etkisi) sağlıyor.
 │
-│   ├── commands/         → Sen veya Hermes'in tetikleyeceği slash command'lar.
+│   ├── commands/         → Sen veya openPkb'in tetikleyeceği slash command'lar.
 │   │   ├── deep-research.md       → "/deep-research tiktok marketing" → tam akış
 │   │   ├── morning-digest.md      → Gece sonu özet üretir
 │   │   └── topic-queue.md         → Açık konuları listeler
 │   │
-│   │   Bunlar olmadan her gece Hermes'in CC'ye uzun uzun prompt yazması
+│   │   Bunlar olmadan her gece openPkb'in CC'ye uzun uzun prompt yazması
 │   │   gerekirdi. Slash command'lar tekrar eden iş akışlarını isimlendiriyor.
 │
 │   └── settings.json     → Hangi MCP server'ların açık olduğu, hangi tool'ların
 │                            global yasak olduğu. Güvenlik katmanı.
 │
-├── .hermes/
-│   ├── soul.md           → Hermes agent'ın "kimliği". Hangi karakterde, hangi
+├── .openPkb/
+│   ├── soul.md           → openPkb agent'ın "kimliği". Hangi karakterde, hangi
 │   │                       önceliklerle çalıştığı. M1'in kalitesini etkiler.
 │   └── cron.md           → Hangi job hangi saatte. S1'in tanımı.
 │
@@ -182,13 +182,13 @@ openpkb/
 
 Sen saat 14:00'te diyorsun ki "TikTok marketing araştır, tarih app'im için." `_topics/tiktok-marketing.md` açılıyor, status: active.
 
-Saat 02:00'de Hermes uyanıyor. `_topics/` altında active olan dosyaları listeliyor. Her biri için CC'yi headless modda tetikliyor: `claude -p "/deep-research tiktok-marketing"`.
+Saat 02:00'de openPkb uyanıyor. `_topics/` altında active olan dosyaları listeliyor. Her biri için CC'yi headless modda tetikliyor: `claude -p "/deep-research tiktok-marketing"`.
 
 CC orchestrator olarak çalışıyor. Önce konuyu dallandırıyor (hijyen, slideshow, FYP, creator'lar). Sonra researcher'ı 4 paralel kopya halinde fırlatıyor — her biri bir alt-konuya. Tweetler, makaleler, transcriptler `_raw/`'a düşüyor.
 
 Sonra sırayla: verifier her iddiayı tarıyor, çapraz doğrulama. contradiction-finder çelişen iddiaları yakalayıp ayrı sayfalara koyuyor. source-trust her yeni creator için scam profili çıkarıyor. gap-hunter her şey bittiğinde tüm mahsulü tarayıp "burada açık soru var" diyen yerleri `_open_questions.md`'ye blocker/high/nice-to-have sırasıyla diziyor.
 
-Sabah 07:00'de Hermes `/morning-digest`'i çağırıyor. Çıktı Telegram'a düşüyor: "Gece TikTok marketing için 12 sayfa eklendi, 2 çelişki açıldı (biri open, biri context-dependent), 4 blocker soru hâlâ açık, creator X için trust: scam-suspect."
+Sabah 07:00'de openPkb `/morning-digest`'i çağırıyor. Çıktı Telegram'a düşüyor: "Gece TikTok marketing için 12 sayfa eklendi, 2 çelişki açıldı (biri open, biri context-dependent), 4 blocker soru hâlâ açık, creator X için trust: scam-suspect."
 
 Sen uyanıyorsun, Obsidian'ı açıyorsun, graph view'inde gece büyümüş ağı görüyorsun. Blocker sorulara bakıyorsun — bir sonraki adımını ona göre atıyorsun.
 
