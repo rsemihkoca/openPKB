@@ -42,3 +42,14 @@ konuyla ilgili araştırmaları async olarak subagentlar yapabilmeli, farklı ko
 
 
 openPkb
+
+
+
+mümkün olduğu kadar ücretsiz self hosted olmalı tavily yerine CRAWL4AI
+
+ileri aşama
+en önemli şeylerden biri kotayı aşmaya yaklaştığında durmalı, kota yenilendiğinde kaldığı yerden devam edebilmeli
+
+
+https://twitterapi.io/
+npx skills add kaitoInfra/twitterapi-io
