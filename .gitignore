@@ -4,10 +4,6 @@
 *.key
 *.pem
 
-# Hermes runtime
-~/.hermes/cache/
-.hermes/cache/
-.hermes/output/
 
 # OS
 .DS_Store

@@ -46,6 +46,15 @@ openPkb
 
 
 mümkün olduğu kadar ücretsiz self hosted olmalı tavily yerine CRAWL4AI
+token tasarufu yüksek olmalı
+kaldığı yerden devam edebilmeli
+
+Job state checkpoint
+güncel tasklar diske yazılmalı
+
+task'a başlamadan kota durumu kontrol edilmeli 
+task paused olamaz başlar veya biter hata alınırsa in progresste kalır
+
 
 ileri aşama
 en önemli şeylerden biri kotayı aşmaya yaklaştığında durmalı, kota yenilendiğinde kaldığı yerden devam edebilmeli
