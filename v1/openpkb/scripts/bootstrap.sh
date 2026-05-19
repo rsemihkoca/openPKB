@@ -44,8 +44,7 @@ echo "[2/5] .env kontrolü..."
 if [ ! -f .env ]; then
   cp .env.example .env
   echo "  ✓ .env oluşturuldu (.env.example'dan)"
-  echo "  ! .env'i aç ve API anahtarlarını doldur:"
-  echo "      - ANTHROPIC_API_KEY"
+  echo "  ! .env'i aç ve API anahtarını doldur:"
   echo "      - TWITTERAPI_IO_API_KEY"
 else
   echo "  ✓ .env mevcut"
@@ -89,7 +88,7 @@ echo "=========================================="
 echo "Kurulum tamam."
 echo ""
 echo "Sonraki adımlar:"
-echo "  1. .env içindeki API anahtarlarını doldur"
+echo "  1. .env içindeki TWITTERAPI_IO_API_KEY'i doldur"
 echo "  2. vault/_topics/<konu>/seeds.md dosyana Twitter tohumları ekle"
 echo "  3. Konuyu başlat:  claude -p '/deep-research <konu-slug>'"
 echo ""
