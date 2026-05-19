@@ -1,0 +1,23 @@
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+
+# Hermes runtime
+~/.hermes/cache/
+.hermes/cache/
+.hermes/output/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Obsidian workspace files (kullanıcıya özel)
+vault/.obsidian/workspace*.json
+vault/.obsidian/graph.json

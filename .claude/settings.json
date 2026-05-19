@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Bash(git *)",
+      "Bash(date *)",
+      "Bash(ls *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | sh)"
+    ]
+  },
+  "mcpServers": {
+    "tavily": {
+      "command": "npx",
+      "args": ["-y", "@tavily/mcp-server"],
+      "env": {
+        "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+      }
+    },
+    "browseract": {
+      "command": "npx",
+      "args": ["-y", "@browseract/mcp"],
+      "env": {
+        "BROWSERACT_API_KEY": "${BROWSERACT_API_KEY}"
+      }
+    },
+    "infranodus": {
+      "command": "npx",
+      "args": ["-y", "@infranodus/mcp"],
+      "env": {
+        "INFRANODUS_API_KEY": "${INFRANODUS_API_KEY}"
+      }
+    }
+  },
+  "model": "claude-sonnet-4-6",
+  "maxTurns": 50,
+  "outputStyle": "concise"
+}

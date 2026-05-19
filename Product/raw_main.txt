@@ -1,0 +1,44 @@
+[CC nights] problem -> cc akşamları boşta kalıyor -> yarınki konuyu araştırsın
+
+
+mesela ben app tasarlerken bir sonraki adım tiktok organik içerikler
+
+istiyorum ki cc internet üzerinde benim verdiğim konu üzerinden referansları da toplayarak 3d uzaydan veri toplasın
+bulduğu verileri verify etsin, görüşleri veya belgeleri revize edecek ağ üzerinden takip ederek buna göre karşıt görüşlerin de ağırlığı varsa bunun hakkında da bilgi verecek
+
+bunları obsidian içine kaydetsin graph şeklinde
+
+
+
+mesela uygulamam hakkında bilgi verip bunun nasıl marketing'ini yapmalıyım diye araştırdığımda 
+
+Tiktok marketing görmem gerekli, tiktok hesabına ait hygiene tavsiyeelrini görmem lazım
+slideshowlar ile ilgili bilgi görmem gerekli insanlar nasıl oluşturmuş bunu da görmem lazım
+
+Twitter bağlı olmalı twitter üzerinden ilerleyecek ve bilgilieri interntten doğrulatacak
+
+tweetler ve makaleleri bulacak
+
+twitter üzerinde surf yapacak
+
+bilgi, düşünce, experience bulutu gibi düşün, claude code bu konuyu geceleri senin için derinlemesine araştıracak
+
+bilgilier doğru nodelar leafler  veya başlıklar alt başlıklar olarak gruplandıracak, ilgili verileri doğru yere atacak
+
+user'ın scam olup olmamasını araştıracak güvenilir kaynakları ayrıca belirtecek
+
+bu sayede strateji yapman kolaylaşacak
+
+özütlenmiş konu ile alakalı güncel ve referanslı bilgi gelecek 
+
+yani kısacası konuya dair boşluk alan burası nasıl olmalı, peki burada ne olacak tarzı bir boşluk kalmamalı her sorunun cevabını bulmalı
+
+mesela third party api kullanıldığını öğrendin -> ama pazardakilerden hangilerini kullanabilirim bunlar arasında en uygunu en başarılısı hangisi bu ekstra bir araştırma konusu konudan bağımsız bunun da gelmesi gerekli araştırılıp
+süngerbob gibi düşün aradaki boşluklar sırayla eritilmeli, bu boşlukların büyük derin akış kesici olması önemli, bir sonraki adımı onsuz atamıyorsam o boşluk doldurulmalı
+
+mesela tiktok için iphone kullan dedi -> bu iphone nasıl kullanılmalı tiktok için hop tiktok hygiene araştırması olarak toplandı bulunanlar
+
+konuyla ilgili araştırmaları async olarak subagentlar yapabilmeli, farklı konularda bilgi çekerken subagentlar birbirinden bağımsız çalışabilir ardından context'e sahip ai sırayla inceler ve doğru alanlara bu bilgileri verir, zaman ilerledikçe contextten bilgileri siler ama her node'un(belgenin) meta bilgisini her zaman tutar sonrada ihtiyacı olursa okumak için
+
+
+openPkb
