@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Bash(git *)",
+      "Bash(date *)",
+      "Bash(ls *)",
+      "Bash(docker compose *)",
+      "Bash(docker ps *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(curl * | sh)",
+      "Bash(wget * | sh)"
+    ]
+  },
+  "mcpServers": {
+    "crawl4ai": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "--volume",
+        "/tmp/crawl4ai-crawls:/app/crawls",
+        "uysalsadi/crawl4ai-mcp-server:latest"
+      ],
+      "env": {
+        "CRAWL4AI_MCP_LOG": "INFO"
+      }
+    },
+    "infranodus": {
+      "command": "docker",
+      "args": [
+        "compose",
+        "-f",
+        "docker-compose.yml",
+        "exec",
+        "-T",
+        "infranodus",
+        "node",
+        "/app/mcp-server.js"
+      ],
+      "env": {},
+      "_comment": "Opsiyonel. InfraNodus self-hosted container'ı docker-compose ile başlatıldıysa kullanılır. Yoksa gap-hunter grep + wikilink ile fallback yapar."
+    }
+  },
+  "model": "claude-sonnet-4-6",
+  "maxTurns": 50,
+  "outputStyle": "concise"
+}

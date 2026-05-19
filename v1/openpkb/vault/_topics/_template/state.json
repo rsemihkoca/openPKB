@@ -1,0 +1,16 @@
+{
+  "slug": "TEMPLATE",
+  "status": "pending",
+  "started_at": null,
+  "last_checkpoint": null,
+  "finished_at": null,
+  "plan": {
+    "subtopics": [],
+    "done": [],
+    "in_progress": [],
+    "pending": []
+  },
+  "subagent_results": {},
+  "error": null,
+  "_comment": "Bu dosya /deep-research tarafından otomatik yazılır ve güncellenir. Manuel düzenleme: sadece status değiştirebilirsin (pending/in_progress/done/error). 'paused' yasak (P5)."
+}
