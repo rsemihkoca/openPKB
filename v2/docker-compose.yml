@@ -1,0 +1,48 @@
+services:
+  # Crawl4AI MCP — self-hosted web scraping (P1)
+  # MCP stdio üzerinden çalışır; Claude Code settings.json'da `docker run --rm -i`
+  # ile başlatır. Bu compose dosyası image'i pre-pull etmek ve sağlık testi için.
+  crawl4ai:
+    image: uysalsadi/crawl4ai-mcp-server:latest
+    container_name: openpkb-crawl4ai
+    # MCP stdio modunda Claude Code tarafından spawn edilir, burada `up`
+    # ile çalıştırılması GEREKMIYOR — image'i indirmek için yeterli.
+    # Manuel test için: docker compose run --rm crawl4ai
+    profiles:
+      - prefetch
+    volumes:
+      - crawl4ai-data:/app/crawls
+    environment:
+      - CRAWL4AI_MCP_LOG=INFO
+
+  # InfraNodus (opsiyonel) — graph gap analysis için.
+  # Self-hosted versiyonu Neo4j gerektiriyor. Şimdilik aktif değil —
+  # gap-hunter MCP yoksa grep+wikilink ile fallback yapar.
+  # Aktif etmek için: docker compose --profile graph up -d
+  infranodus:
+    image: noduslabs/infranodus:latest
+    container_name: openpkb-infranodus
+    profiles:
+      - graph
+    depends_on:
+      - neo4j
+    environment:
+      - NEO4J_URI=bolt://neo4j:7687
+      - NEO4J_USER=neo4j
+      - NEO4J_PASSWORD=${NEO4J_PASSWORD:-infranodus}
+    ports:
+      - "3000:3000"
+
+  neo4j:
+    image: neo4j:5-community
+    container_name: openpkb-neo4j
+    profiles:
+      - graph
+    environment:
+      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-infranodus}
+    volumes:
+      - neo4j-data:/data
+
+volumes:
+  crawl4ai-data:
+  neo4j-data:

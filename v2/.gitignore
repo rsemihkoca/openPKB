@@ -1,0 +1,24 @@
+# Environment
+.env
+
+# Docker volumes (run-time data, vault dışında)
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Vault'un içindeki Obsidian workspace dosyaları (kullanıcıya özel)
+vault/.obsidian/workspace*.json
+vault/.obsidian/app.json
+
+# Skill dosyaları (npx skills add ile bootstrap'ta gelir)
+# Kullanıcının kendi makinesinde yeniden kurulur.
+.claude/skills/twitterapi-io/

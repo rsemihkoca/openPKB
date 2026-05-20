@@ -41,6 +41,3 @@ bunlara dokunmaz.
 -->
 
 - @noisy_account — bot/affiliate, atlanmalı
-
-
-  claude -p '/deep-research tiktok-marketing-for-consumer-apps'

@@ -1,0 +1,79 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": true,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:_wiki/outline/",
+      "color": {
+        "a": 1,
+        "rgb": 16753920
+      }
+    },
+    {
+      "query": "path:_wiki/claims/",
+      "color": {
+        "a": 1,
+        "rgb": 5025616
+      }
+    },
+    {
+      "query": "path:_wiki/concepts/",
+      "color": {
+        "a": 1,
+        "rgb": 4756959
+      }
+    },
+    {
+      "query": "path:_wiki/questions/",
+      "color": {
+        "a": 1,
+        "rgb": 14593307
+      }
+    },
+    {
+      "query": "path:_wiki/contradictions/",
+      "color": {
+        "a": 1,
+        "rgb": 14365733
+      }
+    },
+    {
+      "query": "path:_wiki/sources/ trust:\"scam-suspect\"",
+      "color": {
+        "a": 1,
+        "rgb": 14431524
+      }
+    },
+    {
+      "query": "path:_wiki/sources/",
+      "color": {
+        "a": 1,
+        "rgb": 8421504
+      }
+    },
+    {
+      "query": "path:_raw/",
+      "color": {
+        "a": 0.4,
+        "rgb": 11119017
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.4,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518,
+  "repelStrength": 12,
+  "linkStrength": 0.85,
+  "linkDistance": 200,
+  "scale": 0.5,
+  "close": false
+}
