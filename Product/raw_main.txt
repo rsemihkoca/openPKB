@@ -62,3 +62,26 @@ en önemli şeylerden biri kotayı aşmaya yaklaştığında durmalı, kota yeni
 
 https://twitterapi.io/
 npx skills add kaitoInfra/twitterapi-io
+
+
+
+==============
+evet twitter primary veri kaynağı olmalı web sadece boşlukları doldurmak için olmalı
+
+ayrıca obsidianda araştırmaların sonuçlarını görmek istediğimde graph üzerinden bakıyorum
+
+burada araştırmalar birbirine referans vermeli ve referansı yüksek olanlar bu sayede bana okuma yaparken öncelik verebilmemi sağlamalı
+
+vermek zorunda değil yani sadece graphe baktığımda verimi structured direkt pick up yapabileceğim ve detaylarına inmek isteyeceğim şekilde kısacası graph'i güzel şekilde utilize edebilmek istiyorum hayatl ettiğim sistemde
+
+amacımız veriyi oldukça kategorize edebilmek, outline'ın çıkarılması, outline'ın genelden özele gitmesi ve outline'ın güncellenebilen, eklenebilen değişebilen bir şey olması veriyi doğru outline'a almak çok önemli
+
+mesela graphte outlinede TikTok Account Hygiene bağlı bir sürü yazı göreceğim için onun yukarıda olması graphte de node'un büyük olması lazım
+
+yani 3d bilgi uzayından -> 2d outline wiki verisine
+
+OBSIDIAN
+Hiyerarşi görsel olarak belli olsun. Konu → kategoriler → alt kategoriler → bireysel iddialar/sayfalar. Genelden özele.
+Referans yoğunluğu görsel olsun. Çok bağlantılı node büyük görünsün — orası "yoğun bilgi" demek, oradan başlamalısın.
+Outline değişken olsun. Sistem yeni veri geldikçe outline'a ekleyebilsin, kategori bölebilsin, birleştirebilsin.
+Pick-up kolay olsun. Graph'a bak → büyük node'lar nerede gör → tıkla → içine in.

@@ -22,3 +22,4 @@ vault/.obsidian/app.json
 # Skill dosyaları (npx skills add ile bootstrap'ta gelir)
 # Kullanıcının kendi makinesinde yeniden kurulur.
 .claude/skills/twitterapi-io/
+*.md
