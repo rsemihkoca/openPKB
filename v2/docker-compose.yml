@@ -20,7 +20,7 @@ services:
   # gap-hunter MCP yoksa grep+wikilink ile fallback yapar.
   # Aktif etmek için: docker compose --profile graph up -d
   infranodus:
-    image: noduslabs/infranodus:latest
+    image: mcreations/infranodus:latest
     container_name: openpkb-infranodus
     profiles:
       - graph
@@ -31,15 +31,15 @@ services:
       - NEO4J_USER=neo4j
       - NEO4J_PASSWORD=${NEO4J_PASSWORD:-infranodus}
     ports:
-      - "3000:3000"
+      - "3001:3001"
 
   neo4j:
-    image: neo4j:5-community
+    image: mcreations/neo4j-infranodus:latest
     container_name: openpkb-neo4j
     profiles:
       - graph
     environment:
-      - NEO4J_AUTH=neo4j/${NEO4J_PASSWORD:-infranodus}
+      - PASSWORD=${NEO4J_PASSWORD:-infranodus}
     volumes:
       - neo4j-data:/data
 

@@ -1,0 +1,33 @@
+{
+  "slug": "tiktok-marketing-for-consumer-apps",
+  "status": "done",
+  "started_at": "2026-05-20T00:00:00",
+  "last_checkpoint": "2026-05-20T12:00:00",
+  "finished_at": "2026-05-20T12:00:00",
+  "plan": {
+    "subtopics": ["hygiene", "slideshow", "fyp-algorithm", "growth-tactics", "app-ideas"],
+    "done": ["hygiene", "slideshow", "fyp-algorithm", "growth-tactics", "app-ideas"],
+    "in_progress": [],
+    "pending": []
+  },
+  "subagent_results": {
+    "researcher_hygiene": "done",
+    "researcher_slideshow": "done",
+    "researcher_fyp-algorithm": "done",
+    "researcher_growth-tactics": "done",
+    "researcher_app-ideas": "done",
+    "verifier": "done",
+    "source-trust": "done",
+    "contradiction-finder": "done",
+    "gap-hunter": "done"
+  },
+  "wiki_output": {
+    "concepts": 5,
+    "claims": 8,
+    "contradictions": 2,
+    "questions": 5,
+    "sources": 2,
+    "raw_files": 29
+  },
+  "error": null
+}
